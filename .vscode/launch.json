@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Course_Stepik",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "program": "${workspaceRoot}/Course_Stepik/manage.py",
+            "args": [
+                "runserver",
+                "--no-color",
+                "--noreload"
+            ],
+            "redirectOutput": true,
+        }
+    ]
+}
