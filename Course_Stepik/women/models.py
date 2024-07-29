@@ -36,7 +36,7 @@ class Women(models.Model):
         choices=Status.choices,
         default=Status.DRAFT
     )
-    cat = models.ForeignKey('Category', on_delete=models.CASCADE)
+    cat = models.ForeignKey('Category', on_delete=models.PROTECT, related_name='posts')
 
     objects = models.Manager()
     published = PublishedManager()
@@ -68,3 +68,7 @@ class Category(models.Model):
  
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("category", kwargs={"cat_slug": self.slug})
+    
